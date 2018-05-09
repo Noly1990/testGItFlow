@@ -1,13 +1,15 @@
-//设置cookie
 
-function setCookie(cname, cvalue, exhours) {
+//设置cookie
+function setCookie(docu,cname, cvalue, exhours) {
     var d = new Date();
     d.setTime(d.getTime() + exhours * 60 * 60 * 1000);
     var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+    docu.cookie = cname + "=" + cvalue + "; " + expires;
 }
+
 //获取cookie
-function getCookie(cookie, cname) {
+function getCookie(docu, cname) {
+    var cookie=docu.cookie;
     var name = cname + "=";
     var ca = cookie.split(";");
     for (var i = 0; i < ca.length; i++) {
